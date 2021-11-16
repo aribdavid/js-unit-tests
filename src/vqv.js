@@ -16,6 +16,16 @@
       #VQV!'
 */
 
-const vqv = () => {};
+const vqv = (personName, personAge) => {
+  if (typeof (personName) === 'undefined' || typeof (personAge) === 'undefined') {
+    return undefined;
+  } 
+    let greeting = `Oi, meu nome é ${personName}!\n`;
+    greeting += `Tenho ${personAge} anos,\n`;
+    greeting += 'trabalho na Trybe e mando muito em programação!\n';
+    greeting += '#VQV!';
+    return greeting;
+};
 
+console.log(vqv('Tunico', 29));
 module.exports = vqv;
