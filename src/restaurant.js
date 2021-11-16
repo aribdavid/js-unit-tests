@@ -44,6 +44,21 @@
   
 */
 
-const createMenu = () => {};
+function addConsumption(string) {
+  this.consumption.push(string);
+}
+ 
+const createMenu = (menu) => ({
+  fetchMenu: () => menu,
+  consumption: [],
+  order: addConsumption,
+  pay() {
+    let total = 0;
+    this.consumption.forEach((order) => {
+      total += menu.food[order] || menu.drink[order];
+    });
+    return total * 1.1;
+  },
+});
 
 module.exports = createMenu;
